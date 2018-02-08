@@ -3,7 +3,9 @@ require_once("../etc/init.php");
 define("YEAR", 31536000);
 define("MONTH",2628000);
 
-$cm = $registry["CM"];
+$cm = new Cache(PACKAGE);
+$cm->connect(MEM_HOST, MEM_PORT);
+
 $valid_request = array("help", "debug", "format", "count","gender", "age_range", "country");
 
 
